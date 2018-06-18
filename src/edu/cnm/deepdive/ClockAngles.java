@@ -1,5 +1,8 @@
 package edu.cnm.deepdive;
 
+import java.util.Scanner;
+
+
 /**
  * The static methods of this class compute the angles to which the hands of a
  * clock will be oriented at a given time of day.
@@ -104,6 +107,17 @@ public class ClockAngles {
    */
   public static double hourHandDegrees(int hours, double minutes) {
     // TODO Implement method.
+
+    if (hours < 0) {
+      return -1;
+    }
+    if (hours == 12) {
+      return 0;
+    }
+    double hourAngleDegrees = (hours * 30);
+    double addHourAngle = 0.5 * minutes;
+    hourAngleDegrees = hourAngleDegrees + addHourAngle;
+      return hourAngleDegrees;
   }
 
   /**
@@ -115,6 +129,15 @@ public class ClockAngles {
    */
   public static double minuteHandDegrees(double minutes) {
     // TODO Implement method.
+
+    if (minutes < 0) {
+      return -1;
+    }
+    if (minutes == 60) {
+      minutes = 0;
+    }
+    double minAngleDegrees = (minutes * 6);
+    return minAngleDegrees;
   }
 
   /**
@@ -128,6 +151,17 @@ public class ClockAngles {
    */
   public static double hourHandRadians(int hours, double minutes) {
     // TODO Implement method for EXTRA CREDIT!
+
+    if (hours < 0) {
+      return -1;
+    }
+    if (hours == 12) {
+      return 0;
+    }
+    double hourAngleRadians = hours * 30 * (Math.PI / 180);
+    double addHourAngleRadians = minutes * 0.5 * (Math.PI / 180);
+    return hourAngleRadians;
+
   }
 
   /**
@@ -139,6 +173,15 @@ public class ClockAngles {
    */
   public static double minuteHandRadians(double minutes) {
     // TODO Implement method for EXTRA CREDIT!
+
+    if (minutes < 0) {
+      return -1;
+    }
+    if (minutes == 60) {
+      minutes = 0;
+    }
+    double minAngleRadians = minutes * (Math.PI / 180);
+    return minAngleRadians;
   }
 
 }

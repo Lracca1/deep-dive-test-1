@@ -1,5 +1,8 @@
 package edu.cnm.deepdive;
 
+import java.lang.reflect.Array;
+import java.util.Scanner;
+
 /**
  * The static methods in this class build string array "staircases".
  * <p>
@@ -114,6 +117,22 @@ public class Staircase {
    */
   public static String[] buildLinearStaircase(int height) {
     // TODO Implement method.
+
+    String myArray[] = new String[height];
+
+    for (int i = 0; i < height; i++) {
+      int spaces = height - i;
+
+      for (int k = 0; k < height; k++) {
+        if (k < spaces) {
+          myArray[i] = (" ");
+        } else {
+          myArray[i] = ("*");
+        }
+      }
+    }
+    return myArray;
+
   }
 
   /**
@@ -132,6 +151,22 @@ public class Staircase {
    */
   public static String[] buildFibonacciStaircase(int height) {
     // TODO Implement method for EXTRA CREDIT!
+
+    String myArray[] = new String[height];
+
+    for (int i = 0; i < height; i++) {
+      int spaces = height - i;
+
+      for (int k = 0; k < height; k++) {
+        if (k < spaces) {
+          myArray[i] = ("*");
+        } else {
+          myArray[i] = (" ");
+        }
+      }
+    }
+    return myArray;
+
+  }
   }
 
-}
